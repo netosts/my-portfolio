@@ -47,7 +47,7 @@ const isActive = (route) => {
     <nav>
       <div class="header__logo">
         <RouterLink to="/">
-          <img src="../assets/images/neto-logo-2-full.svg" alt="Neto logo">
+          <img src="../assets/images/neto-logo.png" alt="Neto logo">
         </RouterLink>
       </div>
 

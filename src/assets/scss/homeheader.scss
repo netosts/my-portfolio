@@ -3,7 +3,7 @@
 @import "./animations.scss";
 
 header {
-  background-color: black;
+  background-color: $color-7;
   height: 60px;
   width: 100%;
   nav {
@@ -84,10 +84,11 @@ header {
       margin-left: 40px;
       margin-right: 40px;
       .navbar__links {
+        font-size: 14px;
         text-decoration: none;
         text-transform: lowercase;
         color: white;
-        padding: 20px 25px;
+        padding: 22px 25px;
         &:hover {
           color: $color-3;
           transition: 0.35s;
