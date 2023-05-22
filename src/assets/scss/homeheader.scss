@@ -99,7 +99,6 @@ header {
       margin-left: 40px;
       margin-right: 40px;
       .navbar__links {
-        font-size: 14px;
         text-decoration: none;
         text-transform: lowercase;
         color: white;
@@ -119,7 +118,7 @@ header {
       .links__link {
         display: flex;
         img {
-          @include linksSize(25px);
+          @include linksSize(30px);
           &:hover {
             @include imgHover;
           }
