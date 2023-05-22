@@ -2,19 +2,38 @@
 import { RouterLink, useRoute } from 'vue-router';
 import { ref, onMounted, onUnmounted } from 'vue';
 
-const navbar = ref(null)
-const mobileMenu = ref(null)
+const mobileMenu = ref('menu--active')
+const navbar = ref('header--visible')
 
 // Mobile menu click
 const toggleNavbar = () => {
-  if (navbar.value.classList.contains('header--visible')) {
-    navbar.value.classList.replace('header--visible', 'header--invisible')
-    mobileMenu.value.removeAttribute('id')
+  if (navbar.value === 'header--visible') {
+    navbar.value = 'header--invisible';
+    mobileMenu.value = '';
   } else {
-    navbar.value.classList.replace('header--invisible', 'header--visible')
-    mobileMenu.value.setAttribute('id', 'menuActive')
+    navbar.value = 'header--visible';
+    mobileMenu.value = 'menu--active';
   }
 }
+
+// Window resize top bar fix
+const windowResizeNavbar = () => {
+  if (window.innerWidth <= 700) {
+    navbar.value = 'header--invisible';
+    mobileMenu.value = '';
+  } else {
+    navbar.value = 'header--visible';
+  }
+}
+
+onMounted(() => {
+  window.addEventListener('resize', windowResizeNavbar);
+  windowResizeNavbar();
+});
+
+onUnmounted(() => {
+  window.removeEventListener('resize', windowResizeNavbar);
+});
 
 // Active top bar nav
 const isActive = (route) => {
@@ -32,21 +51,21 @@ const isActive = (route) => {
         </RouterLink>
       </div>
 
-      <div class="mobile-menu menu--active" ref="mobileMenu" @click="toggleNavbar">
+      <div class="mobile-menu menu--active" :id="mobileMenu" @click="toggleNavbar">
         <div class="line1"></div>
         <div class="line2"></div>
         <div class="line3"></div>
       </div>
 
-      <div id="navbar" ref="navbar" class="header--visible">
+      <div id="navbar" :class="navbar">
         <div class="header__navbar">
-          <RouterLink to="/sobre" :id="isActive('/sobre') ? 'navActive' : null" class="navbar__links">
+          <RouterLink to="/sobre" :id="isActive('/sobre') ? 'nav--active' : null" class="navbar__links">
             Sobre
           </RouterLink>
-          <RouterLink to="/portfolio" :id="isActive('/portfolio') ? 'navActive' : null" class="navbar__links">
+          <RouterLink to="/portfolio" :id="isActive('/portfolio') ? 'nav--active' : null" class="navbar__links">
             Portfolio
           </RouterLink>
-          <RouterLink to="/contato" :id="isActive('/contato') ? 'navActive' : null" class="navbar__links">
+          <RouterLink to="/contato" :id="isActive('/contato') ? 'nav--active' : null" class="navbar__links">
             Contato
           </RouterLink>
         </div>
