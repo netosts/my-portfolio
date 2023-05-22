@@ -1,0 +1,21 @@
+// Colors
+$color-1: #fafafa;
+$color-2: #f5f5f5;
+$color-3: #757575;
+$color-4: #363636;
+$color-5: #333333;
+$color-6: #222222;
+
+// Break points map
+$breakpoints: (
+  s: 576px,
+  m: 768px,
+  l: 992px,
+);
+
+@mixin mq($key) {
+  $size: map-get($breakpoints, $key);
+  @media (max-width: $size) {
+    @content;
+  }
+}
