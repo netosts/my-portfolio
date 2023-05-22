@@ -6,27 +6,17 @@ header {
   background-color: $color-7;
   height: 80px;
   width: 100%;
-  @include mq(m) {
-    height: 55px;
-  }
   nav {
     display: flex;
     align-items: center;
     max-width: 900px;
     margin: auto;
     padding: 0 40px;
-    @include mq(m) {
-      padding: 0 20px;
-    }
     .header__logo {
       img {
         position: absolute;
         top: 12px;
         width: 55px;
-        @include mq(m) {
-          top: 10px;
-          width: 35px;
-        }
         border-radius: 50%;
         &:hover {
           @include imgHover;
@@ -41,16 +31,11 @@ header {
         height: 2px;
         margin: 8px;
         background: white;
-        @include mq(m) {
-          width: 28px;
-          height: 2px;
-          margin: 7px;
-        }
       }
       @include mq(m) {
         display: block;
         position: absolute;
-        top: 12px;
+        top: 22px;
         right: 20px;
       }
     }
@@ -60,7 +45,7 @@ header {
       @include mq(m) {
         flex-direction: column;
         position: absolute;
-        top: 55px;
+        top: 80px;
         left: 0;
         width: 100%;
         background-color: $color-6;
@@ -77,16 +62,16 @@ header {
           a {
             width: 100%;
             text-align: center;
-            font-size: 20px;
+            font-size: 24px;
             font-weight: 300;
-            padding: 16px 0;
+            padding: 18px 0;
             border-bottom: 1px solid $color-5;
           }
         }
 
         .header__links {
           height: 40px;
-          margin: 10px 0;
+          margin: 16px 0;
           gap: 30px;
         }
       }
