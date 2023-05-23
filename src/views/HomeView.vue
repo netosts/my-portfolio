@@ -48,7 +48,36 @@ const handleMobileMenu = (emittedValue) => {
         </div>
       </div>
     </section>
-    <section class="projects"></section>
+    <section class="projects">
+      <div class="projects__titlebox">
+        <div class="projects--title"></div>
+        <h3 class="projects__title">Alguns de meus projetos</h3>
+        <div class="projects--title"></div>
+      </div>
+      <div class="projectsbox">
+        <div class="projects__section">
+          <a class="projects__content01" href="https://netosts.com/desafio-android-guanabara/" target="_blank"
+            rel="noopener">
+            <div class="projects__image">
+              <img src="../assets/images/desafio-android.png" alt="desafio android">
+            </div>
+            <div class="projects__info">
+              <h4 class="projects--name">Desafio Android</h4>
+              <p class="projects--info">Website</p>
+            </div>
+          </a>
+          <a class="projects__content02" href="https://netosts.com/formulario-de-contato/" target="_blank" rel="noopener">
+            <div class="projects__image">
+              <img src="../assets/images/formulario-de-contato.png" alt="formulario de contato">
+            </div>
+            <div class="projects__info">
+              <h4 class="projects--name">Formulario de Contato</h4>
+              <p class="projects--info">Website</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
   </main>
 </template>
 

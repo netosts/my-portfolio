@@ -21,12 +21,13 @@ header {
       a {
         img {
           position: absolute;
-          top: 25px;
+          top: 20px;
           left: 30px;
-          width: 35px;
+          width: 40px;
+          border-radius: 50%;
           transition: 0.35s;
           &:hover {
-            @include imgHover;
+            filter: brightness(0.6);
           }
         }
       }
@@ -116,6 +117,10 @@ header {
             @include imgHover;
           }
         }
+      }
+      #cv-icon {
+        margin-bottom: -4px;
+        margin-right: 2px;
       }
     }
   }

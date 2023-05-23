@@ -51,9 +51,9 @@ const isActive = (route) => {
   <header>
     <nav>
       <div class="header__logo">
-        <a href="#">
-          <img src="../assets/images/cv-icon.png" alt="curriculum vitae icon">
-        </a>
+        <RouterLink to="/">
+          <img src="../assets/images/neto-logo.png" alt="neto logo">
+        </RouterLink>
       </div>
 
       <div ref="mobileMenuRef" class="mobile-menu menu--active" :id="mobileMenu" @click="toggleNavbar">
@@ -75,6 +75,9 @@ const isActive = (route) => {
           </RouterLink>
         </div>
         <div class="header__links">
+          <a href="#" id="cv-icon" class="links__link">
+            <img src="../assets/images/cv-icon.png" alt="curriculum vitae icon">
+          </a>
           <a href="https://www.linkedin.com/in/silvio-dos-santos-neto-24a910259/" target="_blank" rel="noopener"
             class="links__link">
             <img src="../assets/images/linkedin-logo.png" alt="linkedin logo">
