@@ -23,7 +23,7 @@ const toggleNavbar = () => {
 
 // Window resize top bar fix
 const windowResizeNavbar = () => {
-  if (window.innerWidth <= 700) {
+  if (window.innerWidth <= 768) {
     navbar.value = 'header--invisible';
     mobileMenu.value = '';
   } else {
@@ -77,7 +77,8 @@ const isActive = (route) => {
         </div>
         <div class="header__links">
           <a href="#" id="cv-icon" class="links__link">
-            <img src="../assets/images/cv-icon.png" alt="curriculum vitae icon">
+            <!-- <img src="../assets/images/cv-icon.png" alt="curriculum vitae icon"> -->
+            <font-awesome-icon id="cv-icon" icon="fa-solid fa-file-lines" style="color: #ffffff" size="2xl" />
           </a>
           <a href="https://www.linkedin.com/in/silvio-dos-santos-neto-24a910259/" target="_blank" rel="noopener"
             class="links__link">
