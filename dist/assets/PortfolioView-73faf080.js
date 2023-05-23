@@ -1,0 +1,1 @@
+import{o as e,c as o,a,F as t,b as r,T as s}from"./index-85d4935b.js";const c=r("h1",null,"Portfolio",-1),i={__name:"PortfolioView",setup(n){return(l,_)=>(e(),o(t,null,[a(s),c],64))}};export{i as default};
