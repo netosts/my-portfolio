@@ -2,8 +2,13 @@
 import { RouterLink, useRoute } from 'vue-router';
 import { ref, onMounted, onUnmounted } from 'vue';
 
-const mobileMenu = ref('menu--active')
-const navbar = ref('header--visible')
+
+// Get the DOM elements
+const mobileMenu = ref('menu--active');
+const navbar = ref('header--visible');
+const mobileMenuRef = ref(null);
+// Define the emit
+const emit = defineEmits(['mobileMenuRef']);
 
 // Mobile menu click
 const toggleNavbar = () => {
@@ -14,7 +19,7 @@ const toggleNavbar = () => {
     navbar.value = 'header--visible';
     mobileMenu.value = 'menu--active';
   }
-}
+};
 
 // Window resize top bar fix
 const windowResizeNavbar = () => {
@@ -24,13 +29,13 @@ const windowResizeNavbar = () => {
   } else {
     navbar.value = 'header--visible';
   }
-}
-
+};
 onMounted(() => {
   window.addEventListener('resize', windowResizeNavbar);
   windowResizeNavbar();
+  // Send emit
+  emit('mobileMenuRef', mobileMenuRef.value);
 });
-
 onUnmounted(() => {
   window.removeEventListener('resize', windowResizeNavbar);
 });
@@ -39,19 +44,19 @@ onUnmounted(() => {
 const isActive = (route) => {
   const currentRoute = useRoute();
   return currentRoute.path === route;
-}
+};
 </script>
 
 <template>
   <header>
     <nav>
       <div class="header__logo">
-        <RouterLink to="/">
-          <img src="../assets/images/neto-logo.png" alt="Neto logo">
-        </RouterLink>
+        <a href="#">
+          <img src="../assets/images/cv-icon.png" alt="curriculum vitae icon">
+        </a>
       </div>
 
-      <div class="mobile-menu menu--active" :id="mobileMenu" @click="toggleNavbar">
+      <div ref="mobileMenuRef" class="mobile-menu menu--active" :id="mobileMenu" @click="toggleNavbar">
         <div class="line1"></div>
         <div class="line2"></div>
         <div class="line3"></div>
@@ -87,5 +92,5 @@ const isActive = (route) => {
 </template>
 
 <style lang="scss" scoped>
-@import '../assets/scss/homeheader.scss';
+@import '../assets/scss/topbar.scss';
 </style>

@@ -9,24 +9,28 @@ header {
   nav {
     display: flex;
     align-items: center;
-    max-width: 900px;
-    margin: auto;
+    width: 100%;
+    position: absolute;
+    right: 0;
     padding: 0 40px;
     @include mq(m) {
       padding: 0 30px;
+      position: relative;
     }
     .header__logo {
-      img {
-        position: absolute;
-        top: 12px;
-        width: 55px;
-        border-radius: 50%;
-        &:hover {
-          @include imgHover;
+      a {
+        img {
+          position: absolute;
+          top: 25px;
+          left: 30px;
+          width: 35px;
+          transition: 0.35s;
+          &:hover {
+            @include imgHover;
+          }
         }
       }
     }
-
     .mobile-menu {
       display: none;
       div {
@@ -39,7 +43,7 @@ header {
         display: block;
         position: absolute;
         top: 22px;
-        right: 20px;
+        right: 30px;
       }
     }
 
@@ -91,9 +95,9 @@ header {
         text-transform: lowercase;
         color: white;
         padding: 32px 25px;
+        transition: 0.35s;
         &:hover {
           color: $color-3;
-          transition: 0.35s;
         }
       }
     }
@@ -107,6 +111,7 @@ header {
         display: flex;
         img {
           @include linksSize(30px);
+          transition: 0.35s;
           &:hover {
             @include imgHover;
           }

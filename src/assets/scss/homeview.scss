@@ -43,8 +43,13 @@ main {
         text-align: center;
         width: 300px;
         margin: 0 20px;
+        .hovered {
+          transform: scale(1.06);
+        }
         img {
           width: 280px;
+          cursor: pointer;
+          transition: transform 0.3s cubic-bezier(0.45, 0.05, 0.55, 0.95);
         }
       }
       .profile__info {

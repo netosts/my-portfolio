@@ -5,8 +5,8 @@
 }
 
 @mixin imgHover() {
-  filter: brightness(0.5);
-  transition: 0.35s;
+  filter: brightness(0.6);
+  transform: translate(1px, -4px) rotate(10deg);
 }
 
 // HomeView.vue
