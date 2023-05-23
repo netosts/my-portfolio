@@ -8,3 +8,8 @@
   filter: brightness(0.5);
   transition: 0.35s;
 }
+
+// HomeView.vue
+@mixin profileWidth() {
+  width: 250px;
+}

@@ -11,7 +11,7 @@ $color-7: #111111;
 $breakpoints: (
   s: 576px,
   m: 700px,
-  l: 992px,
+  l: 900px,
 );
 
 @mixin mq($key) {

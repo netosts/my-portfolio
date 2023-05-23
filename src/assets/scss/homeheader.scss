@@ -12,6 +12,9 @@ header {
     max-width: 900px;
     margin: auto;
     padding: 0 40px;
+    @include mq(m) {
+      padding: 0 30px;
+    }
     .header__logo {
       img {
         position: absolute;
