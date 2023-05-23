@@ -43,8 +43,8 @@ const handleMobileMenu = (emittedValue) => {
           </RouterLink>
         </div>
         <div class="profile__info">
-          <h2>{Coder}</h2>
-          <p>Vue.js | Desenvolvedor Front end</p>
+          <h2>{...}</h2>
+          <p>Desenvolvedor Front-end Vue.js | Freelancing</p>
         </div>
       </div>
     </section>

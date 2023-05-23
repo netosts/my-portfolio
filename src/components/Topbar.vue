@@ -45,14 +45,15 @@ const isActive = (route) => {
   const currentRoute = useRoute();
   return currentRoute.path === route;
 };
+
 </script>
 
 <template>
   <header>
     <nav>
       <div class="header__logo">
-        <RouterLink to="/">
-          <img src="../assets/images/neto-logo.png" alt="neto logo">
+        <RouterLink to="/" :id="isActive('/') ? 'logo--active' : null">
+          <font-awesome-icon icon="fa-solid fa-chevron-left" style="color: #ffffff;" size="2xl" />
         </RouterLink>
       </div>
 

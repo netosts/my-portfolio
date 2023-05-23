@@ -18,18 +18,13 @@ header {
       position: relative;
     }
     .header__logo {
-      a {
-        img {
-          position: absolute;
-          top: 20px;
-          left: 30px;
-          width: 40px;
-          border-radius: 50%;
-          transition: 0.35s;
-          &:hover {
-            filter: brightness(0.6);
-          }
-        }
+      position: absolute;
+      top: 25px;
+      left: 35px;
+      transition: 0.35s;
+      &:hover {
+        left: 32px;
+        filter: brightness(0.6);
       }
     }
     .mobile-menu {
@@ -139,6 +134,10 @@ header {
   div {
     background: $color-3;
   }
+}
+
+#logo--active {
+  display: none;
 }
 
 #nav--active {
