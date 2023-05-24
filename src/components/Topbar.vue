@@ -28,6 +28,7 @@ const windowResizeNavbar = () => {
     mobileMenu.value = '';
   } else {
     navbar.value = 'header--visible';
+    mobileMenu.value = '';
   }
 };
 onMounted(() => {
@@ -76,8 +77,7 @@ const isActive = (route) => {
           </RouterLink>
         </div>
         <div class="header__links">
-          <a href="#" id="cv-icon" class="links__link">
-            <!-- <img src="../assets/images/cv-icon.png" alt="curriculum vitae icon"> -->
+          <a href="/CV - Neto Santos - 20_04_2023.pdf" download="CV - Neto Santos" id="cv-icon" class="links__link">
             <font-awesome-icon id="cv-icon" icon="fa-solid fa-file-lines" style="color: #ffffff" size="2xl" />
           </a>
           <a href="https://www.linkedin.com/in/silvio-dos-santos-neto-24a910259/" target="_blank" rel="noopener"
