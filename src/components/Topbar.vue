@@ -58,7 +58,7 @@ const isActive = (route) => {
         </RouterLink>
       </div>
 
-      <div ref="mobileMenuRef" class="mobile-menu menu--active" :id="mobileMenu" @click="toggleNavbar">
+      <div ref="mobileMenuRef" class="mobile-menu" :id="mobileMenu" @click="toggleNavbar">
         <div class="line1"></div>
         <div class="line2"></div>
         <div class="line3"></div>

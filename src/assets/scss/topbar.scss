@@ -51,6 +51,7 @@ header {
         top: 80px;
         left: 0;
         width: 100%;
+        z-index: 999;
         background-color: $color-6;
         transform: translateY(-10px);
         animation-name: slide;

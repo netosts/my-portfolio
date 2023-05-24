@@ -1,12 +1,12 @@
 <script setup>
 import Copyright from '../components/Copyright.vue';
-import TopBar from '../components/TopBar.vue';
+import Topbar from '../components/Topbar.vue';
 
 
 </script>
 
 <template>
-  <TopBar />
+  <Topbar />
 
   <main>
     <h1>Contato</h1>

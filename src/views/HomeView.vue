@@ -1,8 +1,7 @@
 <script setup>
 import { ref, onMounted } from 'vue';
-import TopBar from '../components/TopBar.vue';
 import Copyright from '../components/Copyright.vue';
-
+import Topbar from '../components/Topbar.vue';
 
 // Profile Pic Hover
 const profilePic = ref(null);
@@ -29,7 +28,7 @@ const handleMobileMenu = (emittedValue) => {
 </script>
 
 <template>
-  <TopBar @mobileMenuRef="handleMobileMenu" />
+  <Topbar @mobileMenuRef="handleMobileMenu" />
 
   <main>
     <section class="profile">
@@ -79,12 +78,11 @@ const handleMobileMenu = (emittedValue) => {
         </div>
       </div>
     </section>
-
   </main>
 
   <Copyright />
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @import '../assets/scss/viewHome.scss';
 </style>
