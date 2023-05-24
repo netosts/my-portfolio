@@ -1,1 +1,0 @@
-import{o as e,c as a,a as o,F as r,b as t,T as s}from"./index-33903cc4.js";const c=t("h1",null,"Sobre",-1),m={__name:"SobreView",setup(n){return(_,l)=>(e(),a(r,null,[o(s),c],64))}};export{m as default};

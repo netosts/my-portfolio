@@ -48,3 +48,15 @@
   padding: 10px 20px;
   line-height: 1.5em;
 }
+
+// Copyright.vue
+@mixin footerStyle() {
+  text-decoration: none;
+  color: $color-3;
+  font-size: 15px;
+  letter-spacing: 1px;
+  transition: 0.35s;
+  &:hover {
+    color: black;
+  }
+}
