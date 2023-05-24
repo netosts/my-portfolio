@@ -7,24 +7,40 @@ const router = createRouter({
     {
       path: '/',
       name: 'home',
-      component: HomeView
+      component: HomeView,
+      meta: {
+        title: 'Neto Santos | Front-End Developer'
+      }
     },
     {
       path: '/sobre',
       name: 'sobre',
-      component: () => import('../views/SobreView.vue')
+      component: () => import('../views/SobreView.vue'),
+      meta: {
+        title: 'Sobre Neto Santos | Front-End Developer'
+      }
     },
     {
       path: '/portfolio',
       name: 'portfolio',
-      component: () => import('../views/PortfolioView.vue')
+      component: () => import('../views/PortfolioView.vue'),
+      meta: {
+        title: 'Portfolio de Neto Santos'
+      }
     },
     {
       path: '/contato',
       name: 'contato',
-      component: () => import('../views/ContatoView.vue')
+      component: () => import('../views/ContatoView.vue'),
+      meta: {
+        title: 'Contato Neto Santos'
+      }
     }
   ]
+})
+
+router.beforeEach((to, from) => {
+  document.title = to.meta?.title ?? 'Default Title';
 })
 
 export default router

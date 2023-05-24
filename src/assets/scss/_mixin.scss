@@ -1,3 +1,17 @@
+// Break points map
+$breakpoints: (
+  s: 576px,
+  m: 768px,
+  l: 900px,
+);
+
+@mixin mq($key) {
+  $size: map-get($breakpoints, $key);
+  @media (max-width: $size) {
+    @content;
+  }
+}
+
 // Topbar.vue
 @mixin linksSize($size) {
   width: $size;
@@ -58,5 +72,13 @@
   transition: 0.35s;
   &:hover {
     color: black;
+  }
+}
+
+// SobreView.vue
+@mixin screenPadding() {
+  padding: 100px;
+  @include mq(m) {
+    padding: 50px 30px;
   }
 }

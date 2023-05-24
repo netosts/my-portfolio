@@ -8,17 +8,3 @@ $color-6: #222222;
 $color-7: #111111;
 $img-seafoam: #ddf0e5;
 $img-green: #cce9cc;
-
-// Break points map
-$breakpoints: (
-  s: 576px,
-  m: 768px,
-  l: 900px,
-);
-
-@mixin mq($key) {
-  $size: map-get($breakpoints, $key);
-  @media (max-width: $size) {
-    @content;
-  }
-}
