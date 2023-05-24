@@ -1,0 +1,1 @@
+import{_ as t,o as s,c as _,a as e,F as c,T as n,C as p,p as r,b as d,d as o}from"./index-f8316875.js";const l=a=>(r("data-v-ab8095a8"),a=a(),d(),a),i=l(()=>o("main",null,[o("h1",null,"Contato")],-1)),u={__name:"ContatoView",setup(a){return(m,h)=>(s(),_(c,null,[e(n),i,e(p)],64))}},V=t(u,[["__scopeId","data-v-ab8095a8"]]);export{V as default};

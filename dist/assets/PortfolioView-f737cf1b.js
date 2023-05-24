@@ -1,0 +1,1 @@
+import{_ as a,o as s,c as _,a as e,F as c,T as p,C as r,p as l,b as n,d as t}from"./index-f8316875.js";const i=o=>(l("data-v-23562033"),o=o(),n(),o),d=i(()=>t("main",null,[t("h1",null,"Portfolio")],-1)),u={__name:"PortfolioView",setup(o){return(f,m)=>(s(),_(c,null,[e(p),d,e(r)],64))}},V=a(u,[["__scopeId","data-v-23562033"]]);export{V as default};

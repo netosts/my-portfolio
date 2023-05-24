@@ -1,0 +1,1 @@
+import{_ as s,o as t,c as _,a as o,F as c,T as p,C as r,p as n,b as d,d as a}from"./index-f8316875.js";const l=e=>(n("data-v-757f9e0e"),e=e(),d(),e),i=l(()=>a("main",null,[a("h1",null,"Sobre")],-1)),u={__name:"SobreView",setup(e){return(f,m)=>(t(),_(c,null,[o(p),i,o(r)],64))}},h=s(u,[["__scopeId","data-v-757f9e0e"]]);export{h as default};
