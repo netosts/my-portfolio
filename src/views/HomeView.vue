@@ -51,7 +51,7 @@ const handleMobileMenu = (emittedValue) => {
     <section class="projects">
       <div class="projects__titlebox">
         <div class="projects--title"></div>
-        <h3 class="projects__title">Alguns de meus projetos</h3>
+        <h3 class="projects__title">Principais projetos</h3>
         <div class="projects--title"></div>
       </div>
       <div class="projectsbox">
@@ -83,6 +83,6 @@ const handleMobileMenu = (emittedValue) => {
   <Copyright />
 </template>
 
-<style lang="scss" scoped>
+<style lang="scss">
 @import '../assets/scss/viewHome.scss';
 </style>

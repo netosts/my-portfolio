@@ -1,8 +1,12 @@
 // Break points map
 $breakpoints: (
+  xs: 375px,
   s: 576px,
   m: 768px,
+  m-l: 860px,
   l: 900px,
+  xl: 1200px,
+  xxl: 1420px,
 );
 
 @mixin mq($key) {
@@ -31,8 +35,16 @@ $breakpoints: (
 @mixin projectBox() {
   display: flex;
   flex-direction: column;
-  width: 350px;
-  height: 250px;
+  width: 400px;
+  height: 300px;
+  @include mq(m-l) {
+    width: 355px;
+    height: 260px;
+  }
+  @include mq(xs) {
+    width: 340px;
+    height: 250px;
+  }
   background-color: white;
   border-radius: 5px;
   box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.2);
@@ -44,11 +56,19 @@ $breakpoints: (
 }
 
 @mixin imageBox($color) {
-  width: 340px;
-  height: 65%;
+  width: 390px;
+  height: 70%;
   margin: 5px;
   background-color: $color;
   border-radius: 5px;
+  transition: 0.35s;
+  @include mq(m-l) {
+    width: 345px;
+  }
+  @include mq(xs) {
+    width: 330px;
+    height: 68%;
+  }
 }
 
 @mixin imgInside($width, $height) {
@@ -61,6 +81,13 @@ $breakpoints: (
 @mixin infoBox() {
   padding: 10px 20px;
   line-height: 1.5em;
+  transition: 0.35s;
+  @include mq(m-l) {
+    padding: 5px 20px;
+  }
+  @include mq(xs) {
+    padding: 3px 20px;
+  }
 }
 
 // Copyright.vue
@@ -77,8 +104,20 @@ $breakpoints: (
 
 // SobreView.vue
 @mixin screenPadding() {
-  padding: 100px;
+  padding: 100px 300px;
+  @include mq(xxl) {
+    padding: 100px 200px;
+  }
+  @include mq(xl) {
+    padding: 100px 150px;
+  }
+  @include mq(l) {
+    padding: 100px;
+  }
   @include mq(m) {
+    padding: 50px 60px;
+  }
+  @include mq(s) {
     padding: 50px 30px;
   }
 }

@@ -1,6 +1,70 @@
 @import "./_variables.scss";
 @import "./mixin.scss";
 
-h1 {
-  height: 900px;
+.introduction {
+  @include screenPadding();
+  background-color: white;
+  box-shadow: 0px 1px 4px rgba(0 0 0 / 0.14);
+  .introduction__text {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    h1 {
+      font-size: 5rem;
+      font-weight: 900;
+      color: $color-4;
+      @include mq(m) {
+        font-size: 4rem;
+      }
+    }
+    h2 {
+      max-width: 625px;
+      font-size: 26px;
+      font-weight: 400;
+      color: $color-3;
+      @include mq(m) {
+        font-size: 22px;
+      }
+    }
+    p {
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 2rem;
+      color: $color-4;
+      @include mq(m) {
+        font-size: 17px;
+      }
+    }
+  }
+}
+
+.projects__content03 {
+  @include projectBox();
+  .projects__image {
+    @include imageBox($color-2);
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    img {
+      @include imgInside(65%, 90%);
+    }
+  }
+}
+.projects__content04 {
+  @include projectBox();
+  .projects__image {
+    @include imageBox($color-2);
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    img {
+      @include imgInside(65%, 90%);
+    }
+  }
+}
+
+.projects--soon {
+  font-size: 20px;
+  font-weight: 300;
+  color: $color-3;
 }

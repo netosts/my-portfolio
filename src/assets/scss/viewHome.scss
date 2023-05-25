@@ -102,20 +102,14 @@ main {
       }
     }
     .projectsbox {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: space-between;
-      height: 80%;
       .projects__section {
-        display: flex;
-        justify-content: space-between;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
         gap: 40px;
-        width: 740px;
         margin-top: 40px;
         @include mq(m) {
-          flex-direction: column;
-          align-items: center;
+          grid-template-columns: 1fr;
+          justify-items: center;
         }
         .projects__content01 {
           @include projectBox();
@@ -125,18 +119,7 @@ main {
             align-items: flex-end;
             justify-content: center;
             img {
-              @include imgInside(70%, 90%);
-            }
-          }
-          .projects__info {
-            @include infoBox();
-            .projects--name {
-              font-weight: 600;
-              color: $color-5;
-            }
-            .projects--info {
-              font-weight: 300;
-              color: $color-3;
+              @include imgInside(65%, 90%);
             }
           }
         }
@@ -148,19 +131,19 @@ main {
             align-items: flex-end;
             justify-content: center;
             img {
-              @include imgInside(60%, 85%);
+              @include imgInside(55%, 80%);
             }
           }
-          .projects__info {
-            @include infoBox();
-            .projects--name {
-              font-weight: 600;
-              color: $color-5;
-            }
-            .projects--info {
-              font-weight: 300;
-              color: $color-3;
-            }
+        }
+        .projects__info {
+          @include infoBox();
+          .projects--name {
+            font-weight: 600;
+            color: $color-5;
+          }
+          .projects--info {
+            font-weight: 300;
+            color: $color-3;
           }
         }
       }
