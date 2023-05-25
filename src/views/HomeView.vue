@@ -3,6 +3,7 @@ import { ref, onMounted } from 'vue';
 import Copyright from '../components/Copyright.vue';
 import Topbar from '../components/Topbar.vue';
 
+
 // Profile Pic Hover
 const profilePic = ref(null);
 const hoverOn = () => {

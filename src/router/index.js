@@ -1,8 +1,15 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 
+
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
+  scrollBehavior(to, from, savedPosition) {
+    if (to.hash) {
+      return window.scrollTo({ top: document.querySelector(to.hash).offsetTop, behavior: 'smooth' });
+    }
+    return window.scrollTo({ top: 0, behavior: 'smooth' });
+  },
   routes: [
     {
       path: '/',
