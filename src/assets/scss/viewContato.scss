@@ -1,6 +1,145 @@
 @import "./_variables.scss";
 @import "./mixin.scss";
 
-h1 {
-  height: 900px;
+.introduction {
+  @include screenPadding();
+  background-color: white;
+  box-shadow: 0px 1px 4px rgba(0 0 0 / 0.14);
+  .introduction__text {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    h1 {
+      font-size: 5rem;
+      font-weight: 900;
+      color: $color-4;
+      @include mq(m) {
+        font-size: 4rem;
+      }
+    }
+    h2 {
+      max-width: 625px;
+      font-size: 26px;
+      font-weight: 400;
+      color: $color-3;
+      @include mq(m) {
+        font-size: 22px;
+      }
+    }
+    p {
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 2rem;
+      color: $color-4;
+      @include mq(m) {
+        font-size: 17px;
+      }
+    }
+    .introduction__content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      max-width: 400px;
+      .introduction__links {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        transition: 0.35s;
+        &:hover {
+          opacity: 0.7;
+        }
+        img {
+          width: 45px;
+        }
+        p {
+          font-size: 12px;
+          font-weight: 600;
+          padding: 10px;
+        }
+        .introduction--linkedin {
+          color: #1686b0;
+        }
+        .introduction--instagram {
+          color: #ca284a;
+        }
+      }
+    }
+  }
+}
+
+.emailbox {
+  display: flex;
+  flex-direction: column;
+  max-width: 1000px;
+  padding: 100px 50px;
+  margin: auto;
+  @include mq(s) {
+    padding: 50px 30px;
+  }
+  gap: 20px;
+  max-width: 1000px;
+  .email__title {
+    h1 {
+      font-size: 2rem;
+      font-weight: 300;
+      color: $color-5;
+    }
+  }
+  .email__inputs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    @include mq(m) {
+      grid-template-columns: 1fr;
+    }
+    .input__user {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 20px;
+      .user__inputs {
+        @include userInputs();
+        input {
+          height: 40px;
+          @include inputArea();
+          &::placeholder {
+            font-size: 12px;
+          }
+        }
+      }
+    }
+    .input__textarea {
+      @include userInputs();
+      textarea {
+        @include inputArea();
+        resize: none;
+        height: 122px;
+      }
+    }
+  }
+  .email__submit {
+    display: flex;
+    justify-content: flex-end;
+    @include mq(m) {
+      justify-content: flex-start;
+    }
+    input[type="submit"] {
+      width: 135px;
+      padding: 14px;
+      background-color: $color-4;
+      border: none;
+      border-radius: 5px;
+      color: white;
+      font-size: 15px;
+      font-weight: 600;
+      transition: 0.2s;
+      &:hover {
+        cursor: pointer;
+        opacity: 0.8;
+      }
+      &:active {
+        opacity: 1;
+        filter: brightness(0.5);
+      }
+    }
+  }
 }
