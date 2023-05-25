@@ -21,7 +21,7 @@ onMounted(() => {
   profilePic.value.addEventListener('mouseout', hoverOff);
 })
 
-// Listen to topbar.vue component
+// Listen to Topbar.vue component
 const topbarMobileMenu = ref(null);
 const handleMobileMenu = (emittedValue) => {
   topbarMobileMenu.value = emittedValue;

@@ -69,7 +69,7 @@ const sendEmail = (e) => {
     </section>
 
     <section class="email__section">
-      <form ref="form" @submit.prevent="sendEmail" class="emailbox">
+      <form @submit.prevent="sendEmail" class="emailbox">
         <div class="email__title">
           <h1>Envie um email</h1>
         </div>
@@ -77,11 +77,11 @@ const sendEmail = (e) => {
           <div class="input__user">
             <div class="user__inputs">
               <label>Nome</label>
-              <input type="text" :class="input_name" v-model="user_name" name="name" placeholder="Digite seu nome">
+              <input type="text" name="name" :class="input_name" v-model="user_name" placeholder="Digite seu nome">
             </div>
             <div class="user__inputs">
               <label>Email</label>
-              <input type="email" :class="input_email" v-model="user_email" name="email" placeholder="Digite seu email">
+              <input type="email" name="email" :class="input_email" v-model="user_email" placeholder="Digite seu email">
             </div>
           </div>
           <div class="input__textarea">
