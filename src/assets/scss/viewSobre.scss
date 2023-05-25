@@ -17,6 +17,9 @@ main {
         @include mq(m) {
           font-size: 4rem;
         }
+        @include mq(s) {
+          font-size: 3.5rem;
+        }
       }
       h2 {
         max-width: 625px;

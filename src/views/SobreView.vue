@@ -43,14 +43,14 @@ import Topbar from '../components/Topbar.vue';
           <li>Comunicação</li>
           <li>Colaboração</li>
           <li>Pensamento crítico</li>
-          <li>Motivação</li>
-        </ul>
+        <li>Motivação</li>
+      </ul>
       </div>
     </section>
 
-    <section class="skills"></section>
+    <!-- <section class="skills"></section>
 
-    <section class="story"></section>
+      <section class="story"></section> -->
   </main>
 
   <Copyright />
