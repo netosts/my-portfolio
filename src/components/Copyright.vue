@@ -40,7 +40,7 @@ function scrollToTop(scrollTargetY, duration) {
   }
   requestAnimationFrame(animation);
 };
-const scrollToTopBtn = () => {
+function scrollToTopBtn() {
   scrollToTop(0, 1000);
 };
 </script>
@@ -73,5 +73,69 @@ const scrollToTopBtn = () => {
 </template>
 
 <style lang="scss" scoped>
-@import '../assets/scss/copyright.scss';
+@import "../assets/scss/variables";
+@import "../assets/scss/mixin";
+
+.btn {
+  position: fixed;
+  width: 130px;
+  height: 140px;
+  bottom: -75px;
+  left: 50%;
+  transform: translateX(-50%);
+  border: none;
+  background-color: transparent;
+  border-radius: 100% 100% 0 0;
+  transition: 0.5s;
+
+  &:hover {
+    cursor: pointer;
+    transform: translateX(-50%) translateY(-8px);
+  }
+
+  img {
+    width: 50px;
+    transform: translateY(-40px);
+  }
+}
+
+#btn--active {
+  display: block;
+}
+
+footer {
+  display: block;
+  bottom: 0;
+  height: 100px;
+  background: $color-2;
+
+  nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 40px;
+
+    .footer__linksbox {
+      display: flex;
+      gap: 20px;
+
+      @include mq(m) {
+        display: none;
+      }
+    }
+
+    .footer__owner {
+      @include footerStyle();
+
+      @include mq(m) {
+        font-size: 13px;
+        margin-left: -20px;
+      }
+    }
+
+    .footer__links {
+      @include footerStyle();
+      text-transform: lowercase;
+    }
+  }
+}
 </style>

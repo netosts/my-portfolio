@@ -1,19 +1,18 @@
 <script setup>
 import { ref, onMounted } from 'vue';
-import Copyright from '../components/Copyright.vue';
 import Topbar from '../components/Topbar.vue';
 
 
 // Profile Pic Hover
 const profilePic = ref(null);
-const hoverOn = () => {
+function hoverOn() {
   if (topbarMobileMenu.value.getAttribute('id') !== 'menu--active') {
     profilePic.value.classList.add('hovered');
   } else {
     return;
   }
 }
-const hoverOff = () => {
+function hoverOff() {
   profilePic.value.classList.remove('hovered');
 }
 onMounted(() => {
@@ -24,7 +23,7 @@ onMounted(() => {
 // Listen to Topbar.vue component
 const topbarMobileMenu = ref(null);
 const handleMobileMenu = (emittedValue) => {
-  topbarMobileMenu.value = emittedValue;
+  return topbarMobileMenu.value = emittedValue;
 };
 </script>
 
@@ -57,33 +56,215 @@ const handleMobileMenu = (emittedValue) => {
       </div>
       <div class="projectsbox">
         <div class="projects__section">
-          <a class="projects__content01" href="https://netosts.com/desafio-android-guanabara/" target="_blank"
-            rel="noopener">
+          <a class="projects__content01" target="_blank" rel="noopener">
             <div class="projects__image">
-              <img src="../assets/images/desafio-android.png" alt="desafio android">
+              <!-- <img src="../assets/images/desafio-android.png" alt="desafio android"> -->
             </div>
             <div class="projects__info">
-              <h4 class="projects--name">Desafio Android</h4>
-              <p class="projects--info">Website</p>
+              <h4 class="projects--name"><span class="projects--soon">Em breve...</span></h4>
+              <p class="projects--info"></p>
             </div>
           </a>
-          <a class="projects__content02" href="https://netosts.com/formulario-de-contato/" target="_blank" rel="noopener">
+          <a class="projects__content02" target="_blank" rel="noopener">
             <div class="projects__image">
-              <img src="../assets/images/formulario-de-contato.png" alt="formulario de contato">
+              <!-- <img src="../assets/images/formulario-de-contato.png" alt="formulario de contato"> -->
             </div>
             <div class="projects__info">
-              <h4 class="projects--name">Formulario de Contato</h4>
-              <p class="projects--info">Website</p>
+              <h4 class="projects--name"><span class="projects--soon">Em breve...</span></h4>
+              <p class="projects--info"></p>
             </div>
           </a>
         </div>
       </div>
     </section>
   </main>
-
-  <Copyright />
 </template>
 
 <style lang="scss">
-@import '../assets/scss/viewHome.scss';
+@import "../assets/scss/variables";
+@import "../assets/scss/mixin";
+
+main {
+  position: relative;
+  z-index: 1;
+  box-shadow: 0px 1px 4px rgba(0 0 0 / 0.14);
+
+  .profile {
+    display: flex;
+    justify-content: space-evenly;
+    height: 550px;
+    width: 100%;
+    margin: auto;
+    background-color: white;
+    box-shadow: 0px 1px 4px rgba(0 0 0 / 0.14);
+
+    .profilebox {
+      display: flex;
+      align-items: center;
+
+      @include mq(l) {
+        flex-direction: column;
+        justify-content: center;
+        gap: 30px;
+      }
+
+      .profile__greetings {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        text-align: center;
+        @include profileWidth();
+        margin-right: -20px;
+
+        @include mq(l) {
+          margin: 0;
+        }
+
+        .profile--large {
+          font-size: 2.5em;
+          font-weight: 900;
+          color: $color-5;
+        }
+
+        .profile--medium {
+          font-size: 2em;
+          font-weight: 600;
+          color: $color-5;
+        }
+      }
+
+      .profile__pic {
+        text-align: center;
+        width: 300px;
+        margin: 0 20px;
+
+        .hovered {
+          transform: scale(1.06);
+        }
+
+        img {
+          width: 280px;
+          cursor: pointer;
+          transition: transform 0.3s cubic-bezier(0.45, 0.05, 0.55, 0.95);
+        }
+      }
+
+      .profile__info {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        text-align: center;
+        @include profileWidth();
+
+        h2 {
+          font-size: 1.8em;
+          font-weight: 900;
+          text-transform: lowercase;
+          color: $color-5;
+        }
+
+        p {
+          color: $color-3;
+          font-size: 1.2em;
+          font-weight: 400;
+        }
+      }
+    }
+  }
+
+  .projects {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 40px 0;
+
+    .projects__titlebox {
+      display: flex;
+      align-items: center;
+      width: 90%;
+
+      .projects__title {
+        min-width: 350px;
+        text-align: center;
+        font-size: 15px;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        color: $color-3;
+      }
+
+      .projects--title {
+        background: rgba(0, 0, 0, 0.121);
+        height: 0.5px;
+        width: 100%;
+      }
+    }
+
+    .projectsbox {
+      .projects__section {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+        margin-top: 40px;
+
+        @include mq(m) {
+          grid-template-columns: 1fr;
+          justify-items: center;
+        }
+
+        .projects__content01 {
+          @include projectBox();
+
+          .projects__image {
+            @include imageBox($color-2);
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+
+            img {
+              @include imgInside(65%, 90%);
+            }
+          }
+        }
+
+        .projects__content02 {
+          @include projectBox();
+
+          .projects__image {
+            @include imageBox($color-2);
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+
+            img {
+              @include imgInside(55%, 80%);
+            }
+          }
+        }
+
+        .projects__info {
+          @include infoBox();
+
+          .projects--name {
+            font-weight: 600;
+            color: $color-5;
+          }
+
+          .projects--info {
+            font-weight: 300;
+            color: $color-3;
+          }
+        }
+      }
+    }
+  }
+}
+
+.projects--soon {
+  font-size: 20px;
+  font-weight: 300;
+  color: $color-3;
+}
 </style>

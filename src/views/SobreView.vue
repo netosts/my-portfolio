@@ -1,5 +1,4 @@
 <script setup>
-import Copyright from '../components/Copyright.vue';
 import Topbar from '../components/Topbar.vue';
 
 </script>
@@ -43,19 +42,110 @@ import Topbar from '../components/Topbar.vue';
           <li>Comunicação</li>
           <li>Colaboração</li>
           <li>Pensamento crítico</li>
-        <li>Motivação</li>
+          <li>Motivação</li>
       </ul>
-      </div>
+    </div>
     </section>
 
     <!-- <section class="skills"></section>
 
-      <section class="story"></section> -->
+                              <section class="story"></section> -->
   </main>
-
-  <Copyright />
 </template>
 
 <style lang="scss" scoped>
-@import '../assets/scss/viewSobre.scss';
+@import "../assets/scss/variables";
+@import "../assets/scss/mixin";
+
+main {
+  .introduction {
+    @include screenPadding();
+    background-color: white;
+    box-shadow: 0px 1px 4px rgba(0 0 0 / 0.14);
+
+    &__text {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+
+      h1 {
+        font-size: 5rem;
+        font-weight: 900;
+        color: $color-4;
+
+        @include mq(m) {
+          font-size: 4rem;
+        }
+
+        @include mq(s) {
+          font-size: 3.5rem;
+        }
+      }
+
+      h2 {
+        max-width: 625px;
+        font-size: 26px;
+        font-weight: 400;
+        color: $color-3;
+
+        @include mq(m) {
+          font-size: 22px;
+        }
+      }
+
+      p {
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 2rem;
+        color: $color-4;
+
+        @include mq(m) {
+          font-size: 17px;
+        }
+      }
+    }
+  }
+
+  .skillset {
+    @include screenPadding();
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    @include mq(l) {
+      display: flex;
+      flex-direction: column;
+      gap: 50px;
+    }
+
+    h1 {
+      font-size: 2rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+      color: $color-4;
+    }
+
+    li {
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 2.4rem;
+      color: $color-4;
+    }
+
+    &__left {
+      text-align: center;
+
+      ul {
+        list-style: none;
+      }
+    }
+
+    &__right {
+      text-align: center;
+
+      ul {
+        list-style: none;
+      }
+    }
+  }
+}
 </style>

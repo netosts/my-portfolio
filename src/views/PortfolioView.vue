@@ -1,5 +1,4 @@
 <script setup>
-import Copyright from '../components/Copyright.vue';
 import Topbar from '../components/Topbar.vue';
 
 </script>
@@ -24,23 +23,22 @@ import Topbar from '../components/Topbar.vue';
       </div>
       <div class="projectsbox">
         <div class="projects__section">
-          <a class="projects__content01" href="https://netosts.com/desafio-android-guanabara/" target="_blank"
-            rel="noopener">
+          <a class="projects__content01" target="_blank" rel="noopener">
             <div class="projects__image">
-              <img src="../assets/images/desafio-android.png" alt="desafio android">
+              <!-- <img src="../assets/images/desafio-android.png" alt="desafio android"> -->
             </div>
             <div class="projects__info">
-              <h4 class="projects--name">Desafio Android</h4>
-              <p class="projects--info">Website</p>
+              <h4 class="projects--name"><span class="projects--soon">Em breve...</span></h4>
+              <p class="projects--info"></p>
             </div>
           </a>
-          <a class="projects__content02" href="https://netosts.com/formulario-de-contato/" target="_blank" rel="noopener">
+          <a class="projects__content02" target="_blank" rel="noopener">
             <div class="projects__image">
-              <img src="../assets/images/formulario-de-contato.png" alt="formulario de contato">
+              <!-- <img src="../assets/images/formulario-de-contato.png" alt="formulario de contato"> -->
             </div>
             <div class="projects__info">
-              <h4 class="projects--name">Formulario de Contato</h4>
-              <p class="projects--info">Website</p>
+              <h4 class="projects--name"><span class="projects--soon">Em breve...</span></h4>
+              <p class="projects--info"></p>
             </div>
           </a>
           <a class="projects__content03" target="_blank" rel="noopener">
@@ -65,10 +63,88 @@ import Topbar from '../components/Topbar.vue';
       </div>
     </section>
   </main>
-
-  <Copyright />
 </template>
 
 <style lang="scss" scoped>
-@import '../assets/scss/viewPortfolio.scss';
+@import "../assets/scss/variables";
+@import "../assets/scss/mixin";
+
+.introduction {
+  @include screenPadding();
+  background-color: white;
+  box-shadow: 0px 1px 4px rgba(0 0 0 / 0.14);
+
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    h1 {
+      font-size: 5rem;
+      font-weight: 900;
+      color: $color-4;
+
+      @include mq(m) {
+        font-size: 4rem;
+      }
+
+      @include mq(s) {
+        font-size: 3.5rem;
+      }
+    }
+
+    h2 {
+      max-width: 625px;
+      font-size: 26px;
+      font-weight: 400;
+      color: $color-3;
+
+      @include mq(m) {
+        font-size: 22px;
+      }
+    }
+
+    p {
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 2rem;
+      color: $color-4;
+
+      @include mq(m) {
+        font-size: 17px;
+      }
+    }
+  }
+}
+
+.projects__content03 {
+  @include projectBox();
+
+  .projects__image {
+    @include imageBox($color-2);
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+
+    img {
+      @include imgInside(65%, 90%);
+    }
+  }
+}
+
+.projects__content04 {
+  @include projectBox();
+
+  .projects__image {
+    @include imageBox($color-2);
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+
+    img {
+      @include imgInside(65%, 90%);
+    }
+  }
+}
 </style>
