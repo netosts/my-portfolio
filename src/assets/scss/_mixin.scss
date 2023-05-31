@@ -9,8 +9,8 @@ $breakpoints: (
   xxl: 1420px,
 );
 
-@mixin mq($key) {
-  $size: map-get($breakpoints, $key);
+@mixin mq($value) {
+  $size: map-get($breakpoints, $value);
   @media (max-width: $size) {
     @content;
   }
@@ -71,7 +71,14 @@ $breakpoints: (
   }
 }
 
-@mixin imgInside($width, $height) {
+@mixin imgInsideRight($width, $height) {
+  width: $width;
+  height: $height;
+  border-radius: 5px 0 0 5px;
+  box-shadow: -2.2px 1px 3px rgba(0, 0, 0, 0.12);
+}
+
+@mixin imgInsideBottom($width, $height) {
   width: $width;
   height: $height;
   border-radius: 5px 5px 0 0;

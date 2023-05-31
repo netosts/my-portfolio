@@ -56,13 +56,13 @@ const handleMobileMenu = (emittedValue) => {
       </div>
       <div class="projectsbox">
         <div class="projects__section">
-          <a class="projects__content01" target="_blank" rel="noopener">
+          <a class="projects__content01" href="https://seupomodoro.netosts.com/" target="_blank" rel="noopener">
             <div class="projects__image">
-              <!-- <img src="../assets/images/desafio-android.png" alt="desafio android"> -->
+              <img src="../assets/images/seu-pomodoro.png" alt="seu pomodoro">
             </div>
             <div class="projects__info">
-              <h4 class="projects--name"><span class="projects--soon">Em breve...</span></h4>
-              <p class="projects--info"></p>
+              <h4 class="projects--name">Seu Pomodoro</h4>
+              <p class="projects--info">Website</p>
             </div>
           </a>
           <a class="projects__content02" target="_blank" rel="noopener">
@@ -218,13 +218,13 @@ main {
           @include projectBox();
 
           .projects__image {
-            @include imageBox($color-2);
+            @include imageBox(#e0d1e5);
             display: flex;
-            align-items: flex-end;
-            justify-content: center;
+            align-items: center;
+            justify-content: flex-end;
 
             img {
-              @include imgInside(65%, 90%);
+              @include imgInsideRight(75%, 80%);
             }
           }
         }
@@ -239,7 +239,7 @@ main {
             justify-content: center;
 
             img {
-              @include imgInside(55%, 80%);
+              @include imgInsideBottom(55%, 80%);
             }
           }
         }
