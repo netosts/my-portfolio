@@ -218,7 +218,7 @@ main {
           @include projectBox();
 
           .projects__image {
-            @include imageBox(#e0d1e5);
+            @include imageBox(#ecd9d9);
             display: flex;
             align-items: center;
             justify-content: flex-end;
