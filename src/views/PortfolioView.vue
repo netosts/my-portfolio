@@ -29,16 +29,16 @@ import Topbar from '../components/Topbar.vue';
             </div>
             <div class="projects__info">
               <h4 class="projects--name">Seu Pomodoro</h4>
-              <p class="projects--info">Website</p>
+              <p class="projects--info">Web application</p>
             </div>
           </a>
-          <a class="projects__content02" target="_blank" rel="noopener">
+          <a class="projects__content02" href="http://ag2.netosts.com/" target="_blank" rel="noopener">
             <div class="projects__image">
-              <!-- <img src="../assets/images/formulario-de-contato.png" alt="formulario de contato"> -->
+              <img src="../assets/images/ag2.png" alt="ag2">
             </div>
             <div class="projects__info">
-              <h4 class="projects--name"><span class="projects--soon">Em breve...</span></h4>
-              <p class="projects--info"></p>
+              <h4 class="projects--name">Addison Global 2</h4>
+              <p class="projects--info">Challenge</p>
             </div>
           </a>
           <a class="projects__content03" target="_blank" rel="noopener">
