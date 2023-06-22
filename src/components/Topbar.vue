@@ -77,7 +77,8 @@ const isActive = (route) => {
           </RouterLink>
         </div>
         <div class="header__external">
-          <a id="cv-icon" class="external__links">
+          <a href="/CV linkedin - Silvio dos Santos Neto 22-06-2023.pdf" download="CV - Silvio dos Santos Neto 22-06-2023"
+            id="cv-icon" class="external__links">
             <font-awesome-icon id="cv-icon" icon="fa-solid fa-file-lines" style="color: #ffffff" size="2xl" />
           </a>
           <a href="https://www.linkedin.com/in/silvio-dos-santos-neto-24a910259/" target="_blank" rel="noopener"
