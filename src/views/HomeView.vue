@@ -47,7 +47,7 @@ const handleMobileMenu = (emittedValue) => {
         </div>
         <div class="profile__info">
           <h2>{...}</h2>
-          <p>Desenvolvedor Full-stack</p>
+          <p>Desenvolvedor Full Stack</p>
           <p>Vue.js | Python | DevOps</p>
         </div>
       </div>
