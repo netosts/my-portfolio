@@ -1,6 +1,5 @@
 <script setup>
-import Topbar from '../components/Topbar.vue';
-
+import Topbar from "../components/Topbar.vue";
 </script>
 
 <template>
@@ -11,8 +10,10 @@ import Topbar from '../components/Topbar.vue';
       <div class="introduction__text">
         <h1>Portfolio</h1>
         <h2>Dê uma olhada em algumas de minhas aplicações web.</h2>
-        <p>Esses projetos representam minha experiência como desenvolvedor. Cada um deles foi um desafio único que
-          abracei com entusiasmo.</p>
+        <p>
+          Esses projetos representam minha experiência como desenvolvedor. Cada
+          um deles foi um desafio único que abracei com entusiasmo.
+        </p>
       </div>
     </section>
     <section class="projects">
@@ -23,22 +24,32 @@ import Topbar from '../components/Topbar.vue';
       </div>
       <div class="projectsbox">
         <div class="projects__section">
-          <a class="projects__content01" href="https://seupomodoro.netosts.com/" target="_blank" rel="noopener">
+          <a
+            class="projects__content01"
+            href="https://hml.conforfiton.com.br/login/demo"
+            target="_blank"
+            rel="noopener"
+          >
             <div class="projects__image">
-              <img src="../assets/images/seu-pomodoro.png" alt="seu pomodoro">
+              <img src="../assets/images/conforfit-on.png" alt="conforfit on" />
+            </div>
+            <div class="projects__info">
+              <h4 class="projects--name">Conforfit On</h4>
+              <p class="projects--info">Web application</p>
+            </div>
+          </a>
+          <a
+            class="projects__content02"
+            href="http://ag2.netosts.com/"
+            target="_blank"
+            rel="noopener"
+          >
+            <div class="projects__image">
+              <img src="../assets/images/seu-pomodoro.png" alt="seu pomodoro" />
             </div>
             <div class="projects__info">
               <h4 class="projects--name">Seu Pomodoro</h4>
               <p class="projects--info">Web application</p>
-            </div>
-          </a>
-          <a class="projects__content02" href="http://ag2.netosts.com/" target="_blank" rel="noopener">
-            <div class="projects__image">
-              <img src="../assets/images/ag2.png" alt="ag2">
-            </div>
-            <div class="projects__info">
-              <h4 class="projects--name">Addison Global 2</h4>
-              <p class="projects--info">Challenge</p>
             </div>
           </a>
           <a class="projects__content03" target="_blank" rel="noopener">
@@ -46,7 +57,9 @@ import Topbar from '../components/Topbar.vue';
               <!-- <img src="../assets/images/formulario-de-contato.png" alt="formulario de contato"> -->
             </div>
             <div class="projects__info">
-              <h4 class="projects--name"><span class="projects--soon">Em breve...</span></h4>
+              <h4 class="projects--name">
+                <span class="projects--soon">Em breve...</span>
+              </h4>
               <p class="projects--info"></p>
             </div>
           </a>
@@ -55,7 +68,9 @@ import Topbar from '../components/Topbar.vue';
               <!-- <img src="../assets/images/formulario-de-contato.png" alt="formulario de contato"> -->
             </div>
             <div class="projects__info">
-              <h4 class="projects--name"><span class="projects--soon">Em breve...</span></h4>
+              <h4 class="projects--name">
+                <span class="projects--soon">Em breve...</span>
+              </h4>
               <p class="projects--info"></p>
             </div>
           </a>
@@ -73,7 +88,6 @@ import Topbar from '../components/Topbar.vue';
   @include screenPadding();
   background-color: white;
   box-shadow: 0px 1px 4px rgba(0 0 0 / 0.14);
-
 
   &__text {
     display: flex;

@@ -1,29 +1,28 @@
 <script setup>
-import { ref, onMounted } from 'vue';
-import Topbar from '../components/Topbar.vue';
-
+import { ref, onMounted } from "vue";
+import Topbar from "../components/Topbar.vue";
 
 // Profile Pic Hover
 const profilePic = ref(null);
 function hoverOn() {
-  if (topbarMobileMenu.value.getAttribute('id') !== 'menu--active') {
-    profilePic.value.classList.add('hovered');
+  if (topbarMobileMenu.value.getAttribute("id") !== "menu--active") {
+    profilePic.value.classList.add("hovered");
   } else {
     return;
   }
 }
 function hoverOff() {
-  profilePic.value.classList.remove('hovered');
+  profilePic.value.classList.remove("hovered");
 }
 onMounted(() => {
-  profilePic.value.addEventListener('mouseover', hoverOn);
-  profilePic.value.addEventListener('mouseout', hoverOff);
-})
+  profilePic.value.addEventListener("mouseover", hoverOn);
+  profilePic.value.addEventListener("mouseout", hoverOff);
+});
 
 // Listen to Topbar.vue component
 const topbarMobileMenu = ref(null);
 const handleMobileMenu = (emittedValue) => {
-  return topbarMobileMenu.value = emittedValue;
+  return (topbarMobileMenu.value = emittedValue);
 };
 </script>
 
@@ -39,12 +38,17 @@ const handleMobileMenu = (emittedValue) => {
         </div>
         <div class="profile__pic">
           <RouterLink to="/portfolio">
-            <img ref="profilePic" src="../assets/images/profile-pic.png" alt="profile picture">
+            <img
+              ref="profilePic"
+              src="../assets/images/profile-pic.png"
+              alt="profile picture"
+            />
           </RouterLink>
         </div>
         <div class="profile__info">
           <h2>{...}</h2>
-          <p>Desenvolvedor Front-end Vue.js | Freelancing</p>
+          <p>Desenvolvedor Full-stack</p>
+          <p>Vue.js | Python | DevOps</p>
         </div>
       </div>
     </section>
@@ -56,22 +60,32 @@ const handleMobileMenu = (emittedValue) => {
       </div>
       <div class="projectsbox">
         <div class="projects__section">
-          <a class="projects__content01" href="https://seupomodoro.netosts.com/" target="_blank" rel="noopener">
+          <a
+            class="projects__content01"
+            href="https://hml.conforfiton.com.br/login/demo"
+            target="_blank"
+            rel="noopener"
+          >
             <div class="projects__image">
-              <img src="../assets/images/seu-pomodoro.png" alt="seu pomodoro">
+              <img src="../assets/images/conforfit-on.png" alt="conforfit on" />
+            </div>
+            <div class="projects__info">
+              <h4 class="projects--name">Conforfit On</h4>
+              <p class="projects--info">Web application</p>
+            </div>
+          </a>
+          <a
+            class="projects__content02"
+            href="http://ag2.netosts.com/"
+            target="_blank"
+            rel="noopener"
+          >
+            <div class="projects__image">
+              <img src="../assets/images/seu-pomodoro.png" alt="seu pomodoro" />
             </div>
             <div class="projects__info">
               <h4 class="projects--name">Seu Pomodoro</h4>
               <p class="projects--info">Web application</p>
-            </div>
-          </a>
-          <a class="projects__content02" href="http://ag2.netosts.com/" target="_blank" rel="noopener">
-            <div class="projects__image">
-              <img src="../assets/images/ag2.png" alt="ag2">
-            </div>
-            <div class="projects__info">
-              <h4 class="projects--name">Addison Global 2</h4>
-              <p class="projects--info">Challenge</p>
             </div>
           </a>
         </div>
@@ -218,13 +232,13 @@ main {
           @include projectBox();
 
           .projects__image {
-            @include imageBox(#ecd9d9);
+            @include imageBox(#e4e4ef);
             display: flex;
-            align-items: center;
-            justify-content: flex-end;
+            align-items: flex-end;
+            justify-content: center;
 
             img {
-              @include imgInsideRight(75%, 80%);
+              @include imgInsideBottom(65%, 90%);
             }
           }
         }
@@ -233,13 +247,13 @@ main {
           @include projectBox();
 
           .projects__image {
-            @include imageBox($color-2);
+            @include imageBox(#ecd9d9);
             display: flex;
-            align-items: flex-end;
-            justify-content: center;
+            align-items: center;
+            justify-content: flex-end;
 
             img {
-              @include imgInsideBottom(35%, 90%);
+              @include imgInsideRight(75%, 80%);
             }
           }
         }

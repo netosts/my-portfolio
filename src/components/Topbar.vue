@@ -1,44 +1,43 @@
 <script setup>
-import { RouterLink, useRoute } from 'vue-router';
-import { ref, onMounted, onUnmounted } from 'vue';
-
+import { RouterLink, useRoute } from "vue-router";
+import { ref, onMounted, onUnmounted } from "vue";
 
 // Get the DOM elements
-const mobileMenu = ref('menu--active');
-const navbar = ref('header--visible');
+const mobileMenu = ref("menu--active");
+const navbar = ref("header--visible");
 const mobileMenuRef = ref(null);
 // Define the emit
-const emit = defineEmits(['mobileMenuRef']);
+const emit = defineEmits(["mobileMenuRef"]);
 
 // Mobile menu click
 function toggleNavbar() {
-  if (navbar.value === 'header--visible') {
-    navbar.value = 'header--invisible';
-    mobileMenu.value = '';
+  if (navbar.value === "header--visible") {
+    navbar.value = "header--invisible";
+    mobileMenu.value = "";
   } else {
-    navbar.value = 'header--visible';
-    mobileMenu.value = 'menu--active';
+    navbar.value = "header--visible";
+    mobileMenu.value = "menu--active";
   }
-};
+}
 
 // Window resize top bar fix
 function windowResizeNavbar() {
   if (window.innerWidth <= 768) {
-    navbar.value = 'header--invisible';
-    mobileMenu.value = '';
+    navbar.value = "header--invisible";
+    mobileMenu.value = "";
   } else {
-    navbar.value = 'header--visible';
-    mobileMenu.value = '';
+    navbar.value = "header--visible";
+    mobileMenu.value = "";
   }
-};
+}
 onMounted(() => {
-  window.addEventListener('resize', windowResizeNavbar);
+  window.addEventListener("resize", windowResizeNavbar);
   windowResizeNavbar();
   // Send emit
-  emit('mobileMenuRef', mobileMenuRef.value);
+  emit("mobileMenuRef", mobileMenuRef.value);
 });
 onUnmounted(() => {
-  window.removeEventListener('resize', windowResizeNavbar);
+  window.removeEventListener("resize", windowResizeNavbar);
 });
 
 // Active top bar nav
@@ -46,7 +45,6 @@ const isActive = (route) => {
   const currentRoute = useRoute();
   return currentRoute.path === route;
 };
-
 </script>
 
 <template>
@@ -54,11 +52,20 @@ const isActive = (route) => {
     <nav>
       <div class="header__logo">
         <RouterLink to="/" :id="isActive('/') ? 'logo--active' : null">
-          <font-awesome-icon icon="fa-solid fa-chevron-left" style="color: #ffffff;" size="2xl" />
+          <font-awesome-icon
+            icon="fa-solid fa-chevron-left"
+            style="color: #ffffff"
+            size="2xl"
+          />
         </RouterLink>
       </div>
 
-      <div ref="mobileMenuRef" class="mobile-menu" :id="mobileMenu" @click="toggleNavbar">
+      <div
+        ref="mobileMenuRef"
+        class="mobile-menu"
+        :id="mobileMenu"
+        @click="toggleNavbar"
+      >
         <div class="line1"></div>
         <div class="line2"></div>
         <div class="line3"></div>
@@ -66,30 +73,68 @@ const isActive = (route) => {
 
       <div id="navbar" :class="navbar">
         <div class="header__navbar">
-          <RouterLink to="/sobre" :id="isActive('/sobre') ? 'nav--active' : null" class="navbar__links">
+          <RouterLink
+            to="/sobre"
+            :id="isActive('/sobre') ? 'nav--active' : null"
+            class="navbar__links"
+          >
             Sobre
           </RouterLink>
-          <RouterLink to="/portfolio" :id="isActive('/portfolio') ? 'nav--active' : null" class="navbar__links">
+          <RouterLink
+            to="/portfolio"
+            :id="isActive('/portfolio') ? 'nav--active' : null"
+            class="navbar__links"
+          >
             Portfolio
           </RouterLink>
-          <RouterLink to="/contato" :id="isActive('/contato') ? 'nav--active' : null" class="navbar__links">
+          <RouterLink
+            to="/contato"
+            :id="isActive('/contato') ? 'nav--active' : null"
+            class="navbar__links"
+          >
             Contato
           </RouterLink>
         </div>
         <div class="header__external">
-          <a href="/CV linkedin - Silvio dos Santos Neto 22-06-2023.pdf" download="CV - Silvio dos Santos Neto 22-06-2023"
-            id="cv-icon" class="external__links">
-            <font-awesome-icon id="cv-icon" icon="fa-solid fa-file-lines" style="color: #ffffff" size="2xl" />
+          <a
+            href="/CV - 12.10.2023.pdf"
+            download="CV - Silvio dos Santos Neto 12-10-2023"
+            id="cv-icon"
+            class="external__links"
+          >
+            <font-awesome-icon
+              id="cv-icon"
+              icon="fa-solid fa-file-lines"
+              style="color: #ffffff"
+              size="2xl"
+            />
           </a>
-          <a href="https://www.linkedin.com/in/silvio-dos-santos-neto-24a910259/" target="_blank" rel="noopener"
-            class="external__links">
-            <img src="../assets/images/linkedin-logo.png" alt="linkedin logo">
+          <a
+            href="https://www.linkedin.com/in/silvio-dos-santos-neto-24a910259/"
+            target="_blank"
+            rel="noopener"
+            class="external__links"
+          >
+            <img src="../assets/images/linkedin-logo.png" alt="linkedin logo" />
           </a>
-          <a href="https://github.com/netosts" target="_blank" rel="noopener" class="external__links">
-            <img src="../assets/images/github-logo.png" alt="github logo">
+          <a
+            href="https://github.com/netosts"
+            target="_blank"
+            rel="noopener"
+            class="external__links"
+          >
+            <img src="../assets/images/github-logo.png" alt="github logo" />
           </a>
-          <a href="https://www.instagram.com/netosantos.of/" target="_blank" rel="noopener" class="external__links">
-            <img src="../assets/images/instagram-logo.png" alt="instagram logo">
+          <a
+            href="https://www.instagram.com/netosantos.of/"
+            target="_blank"
+            rel="noopener"
+            class="external__links"
+          >
+            <img
+              src="../assets/images/instagram-logo.png"
+              alt="instagram logo"
+            />
           </a>
         </div>
       </div>
