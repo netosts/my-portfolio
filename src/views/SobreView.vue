@@ -10,7 +10,7 @@ import Topbar from "../components/Topbar.vue";
       <div class="introduction__text">
         <h1>Sobre</h1>
         <h2>
-          Sou um desenvolvedor full-stack da cidade Barra dos Coqueiros,
+          Sou um desenvolvedor Full Stack da cidade Barra dos Coqueiros,
           Sergipe.
         </h2>
         <p>
