@@ -76,7 +76,7 @@ const handleMobileMenu = (emittedValue) => {
           </a>
           <a
             class="projects__content02"
-            href="http://ag2.netosts.com/"
+            href="http://seupomodoro.netosts.com/"
             target="_blank"
             rel="noopener"
           >
