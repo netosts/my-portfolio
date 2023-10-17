@@ -76,16 +76,19 @@ const handleMobileMenu = (emittedValue) => {
           </a>
           <a
             class="projects__content02"
-            href="http://seupomodoro.netosts.com/"
+            href="https://github.com/netosts/desafio-mini-financeiro"
             target="_blank"
             rel="noopener"
           >
             <div class="projects__image">
-              <img src="../assets/images/seu-pomodoro.png" alt="seu pomodoro" />
+              <img
+                src="../assets/images/mini-financeiro.png"
+                alt="mini financeiro"
+              />
             </div>
             <div class="projects__info">
-              <h4 class="projects--name">Seu Pomodoro</h4>
-              <p class="projects--info">Web application</p>
+              <h4 class="projects--name">Mini Financeiro</h4>
+              <p class="projects--info">PWA</p>
             </div>
           </a>
         </div>
@@ -247,13 +250,13 @@ main {
           @include projectBox();
 
           .projects__image {
-            @include imageBox(#ecd9d9);
+            @include imageBox(#e4edef);
             display: flex;
-            align-items: center;
-            justify-content: flex-end;
+            align-items: flex-end;
+            justify-content: center;
 
             img {
-              @include imgInsideRight(75%, 80%);
+              @include imgInsideBottom(65%, 90%);
             }
           }
         }

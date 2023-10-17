@@ -40,6 +40,23 @@ import Topbar from "../components/Topbar.vue";
           </a>
           <a
             class="projects__content02"
+            href="https://github.com/netosts/desafio-mini-financeiro"
+            target="_blank"
+            rel="noopener"
+          >
+            <div class="projects__image">
+              <img
+                src="../assets/images/mini-financeiro.png"
+                alt="mini financeiro"
+              />
+            </div>
+            <div class="projects__info">
+              <h4 class="projects--name">Mini Financeiro</h4>
+              <p class="projects--info">PWA</p>
+            </div>
+          </a>
+          <a
+            class="projects__content03"
             href="http://seupomodoro.netosts.com/"
             target="_blank"
             rel="noopener"
@@ -50,17 +67,6 @@ import Topbar from "../components/Topbar.vue";
             <div class="projects__info">
               <h4 class="projects--name">Seu Pomodoro</h4>
               <p class="projects--info">Web application</p>
-            </div>
-          </a>
-          <a class="projects__content03" target="_blank" rel="noopener">
-            <div class="projects__image">
-              <!-- <img src="../assets/images/formulario-de-contato.png" alt="formulario de contato"> -->
-            </div>
-            <div class="projects__info">
-              <h4 class="projects--name">
-                <span class="projects--soon">Em breve...</span>
-              </h4>
-              <p class="projects--info"></p>
             </div>
           </a>
           <a class="projects__content04" target="_blank" rel="noopener">
@@ -136,13 +142,13 @@ import Topbar from "../components/Topbar.vue";
   @include projectBox();
 
   .projects__image {
-    @include imageBox($color-2);
+    @include imageBox(#ecd9d9);
     display: flex;
-    align-items: flex-end;
-    justify-content: center;
+    align-items: center;
+    justify-content: flex-end;
 
     img {
-      @include imgInsideBottom(65%, 90%);
+      @include imgInsideRight(75%, 80%);
     }
   }
 }
