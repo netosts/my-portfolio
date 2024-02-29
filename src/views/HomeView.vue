@@ -1,9 +1,22 @@
-<script setup>
+<script lang="ts" setup>
 import { ref, onMounted } from "vue";
 import Topbar from "../components/Topbar.vue";
+import ProjectsSection from "../components/ProjectsSection.vue";
+import { useMainStore } from "../stores/main.store";
+import { storeToRefs } from "pinia";
 
 // Profile Pic Hover
-const profilePic = ref(null);
+const profilePic = ref();
+
+const mainStore = useMainStore();
+const { projectItems } = storeToRefs(mainStore);
+
+// Listen to Topbar.vue component
+const topbarMobileMenu = ref();
+const handleMobileMenu = (emittedValue) => {
+  return (topbarMobileMenu.value = emittedValue);
+};
+
 function hoverOn() {
   if (topbarMobileMenu.value.getAttribute("id") !== "menu--active") {
     profilePic.value.classList.add("hovered");
@@ -14,16 +27,11 @@ function hoverOn() {
 function hoverOff() {
   profilePic.value.classList.remove("hovered");
 }
+
 onMounted(() => {
   profilePic.value.addEventListener("mouseover", hoverOn);
   profilePic.value.addEventListener("mouseout", hoverOff);
 });
-
-// Listen to Topbar.vue component
-const topbarMobileMenu = ref(null);
-const handleMobileMenu = (emittedValue) => {
-  return (topbarMobileMenu.value = emittedValue);
-};
 </script>
 
 <template>
@@ -52,48 +60,10 @@ const handleMobileMenu = (emittedValue) => {
         </div>
       </div>
     </section>
-    <section class="projects">
-      <div class="projects__titlebox">
-        <div class="projects--title"></div>
-        <h3 class="projects__title">Principais projetos</h3>
-        <div class="projects--title"></div>
-      </div>
-      <div class="projectsbox">
-        <div class="projects__section">
-          <a
-            class="projects__content01"
-            href="https://hml.conforfiton.com.br/login/demo"
-            target="_blank"
-            rel="noopener"
-          >
-            <div class="projects__image">
-              <img src="../assets/images/conforfit-on.png" alt="conforfit on" />
-            </div>
-            <div class="projects__info">
-              <h4 class="projects--name">Conforfit On</h4>
-              <p class="projects--info">Web application</p>
-            </div>
-          </a>
-          <a
-            class="projects__content02"
-            href="https://github.com/netosts/desafio-mini-financeiro"
-            target="_blank"
-            rel="noopener"
-          >
-            <div class="projects__image">
-              <img
-                src="../assets/images/mini-financeiro.png"
-                alt="mini financeiro"
-              />
-            </div>
-            <div class="projects__info">
-              <h4 class="projects--name">Mini Financeiro</h4>
-              <p class="projects--info">PWA</p>
-            </div>
-          </a>
-        </div>
-      </div>
-    </section>
+    <ProjectsSection
+      title="Principais Projetos"
+      :items="projectItems.slice(0, 2)"
+    />
   </main>
 </template>
 
@@ -188,100 +158,5 @@ main {
       }
     }
   }
-
-  .projects {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    padding: 40px 0;
-
-    .projects__titlebox {
-      display: flex;
-      align-items: center;
-      width: 90%;
-
-      .projects__title {
-        min-width: 350px;
-        text-align: center;
-        font-size: 15px;
-        font-weight: 500;
-        text-transform: uppercase;
-        letter-spacing: 3px;
-        color: $color-3;
-      }
-
-      .projects--title {
-        background: rgba(0, 0, 0, 0.121);
-        height: 0.5px;
-        width: 100%;
-      }
-    }
-
-    .projectsbox {
-      .projects__section {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 40px;
-        margin-top: 40px;
-
-        @include mq(m) {
-          grid-template-columns: 1fr;
-          justify-items: center;
-        }
-
-        .projects__content01 {
-          @include projectBox();
-
-          .projects__image {
-            @include imageBox(#e4e4ef);
-            display: flex;
-            align-items: flex-end;
-            justify-content: center;
-
-            img {
-              @include imgInsideBottom(65%, 90%);
-            }
-          }
-        }
-
-        .projects__content02 {
-          @include projectBox();
-
-          .projects__image {
-            @include imageBox(#e4edef);
-            display: flex;
-            align-items: flex-end;
-            justify-content: center;
-
-            img {
-              @include imgInsideBottom(65%, 90%);
-            }
-          }
-        }
-
-        .projects__info {
-          @include infoBox();
-
-          .projects--name {
-            font-weight: 600;
-            color: $color-5;
-          }
-
-          .projects--info {
-            font-weight: 300;
-            color: $color-3;
-          }
-        }
-      }
-    }
-  }
-}
-
-.projects--soon {
-  font-size: 20px;
-  font-weight: 300;
-  color: $color-3;
 }
 </style>

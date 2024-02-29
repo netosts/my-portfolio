@@ -1,5 +1,11 @@
-<script setup>
+<script lang="ts" setup>
+import ProjectsSection from "../components/ProjectsSection.vue";
 import Topbar from "../components/Topbar.vue";
+import { useMainStore } from "../stores/main.store";
+import { storeToRefs } from "pinia";
+
+const mainStore = useMainStore();
+const { projectItems } = storeToRefs(mainStore);
 </script>
 
 <template>
@@ -16,73 +22,7 @@ import Topbar from "../components/Topbar.vue";
         </p>
       </div>
     </section>
-    <section class="projects">
-      <div class="projects__titlebox">
-        <div class="projects--title"></div>
-        <h3 class="projects__title">Meus projetos</h3>
-        <div class="projects--title"></div>
-      </div>
-      <div class="projectsbox">
-        <div class="projects__section">
-          <a
-            class="projects__content01"
-            href="https://hml.conforfiton.com.br/login/demo"
-            target="_blank"
-            rel="noopener"
-          >
-            <div class="projects__image">
-              <img src="../assets/images/conforfit-on.png" alt="conforfit on" />
-            </div>
-            <div class="projects__info">
-              <h4 class="projects--name">Conforfit On</h4>
-              <p class="projects--info">Web application</p>
-            </div>
-          </a>
-          <a
-            class="projects__content02"
-            href="https://github.com/netosts/desafio-mini-financeiro"
-            target="_blank"
-            rel="noopener"
-          >
-            <div class="projects__image">
-              <img
-                src="../assets/images/mini-financeiro.png"
-                alt="mini financeiro"
-              />
-            </div>
-            <div class="projects__info">
-              <h4 class="projects--name">Mini Financeiro</h4>
-              <p class="projects--info">PWA</p>
-            </div>
-          </a>
-          <a
-            class="projects__content03"
-            href="http://seupomodoro.netosts.com/"
-            target="_blank"
-            rel="noopener"
-          >
-            <div class="projects__image">
-              <img src="../assets/images/seu-pomodoro.png" alt="seu pomodoro" />
-            </div>
-            <div class="projects__info">
-              <h4 class="projects--name">Seu Pomodoro</h4>
-              <p class="projects--info">Web application</p>
-            </div>
-          </a>
-          <a class="projects__content04" target="_blank" rel="noopener">
-            <div class="projects__image">
-              <!-- <img src="../assets/images/formulario-de-contato.png" alt="formulario de contato"> -->
-            </div>
-            <div class="projects__info">
-              <h4 class="projects--name">
-                <span class="projects--soon">Em breve...</span>
-              </h4>
-              <p class="projects--info"></p>
-            </div>
-          </a>
-        </div>
-      </div>
-    </section>
+    <ProjectsSection title="Meus Projetos" :items="projectItems" />
   </main>
 </template>
 
@@ -134,36 +74,6 @@ import Topbar from "../components/Topbar.vue";
       @include mq(m) {
         font-size: 17px;
       }
-    }
-  }
-}
-
-.projects__content03 {
-  @include projectBox();
-
-  .projects__image {
-    @include imageBox(#ecd9d9);
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-
-    img {
-      @include imgInsideRight(75%, 80%);
-    }
-  }
-}
-
-.projects__content04 {
-  @include projectBox();
-
-  .projects__image {
-    @include imageBox($color-2);
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-
-    img {
-      @include imgInsideBottom(65%, 90%);
     }
   }
 }
