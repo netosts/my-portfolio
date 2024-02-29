@@ -46,9 +46,9 @@ const handleMobileMenu = (emittedValue) => {
           </RouterLink>
         </div>
         <div class="profile__info">
-          <h2>{...}</h2>
+          <h2>&lt;/&gt;</h2>
           <p>Desenvolvedor Full Stack</p>
-          <p>Vue.js | Python | DevOps</p>
+          <p>Vue.js | PHP | Laravel</p>
         </div>
       </div>
     </section>

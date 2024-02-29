@@ -14,12 +14,24 @@ import Topbar from "../components/Topbar.vue";
           Sergipe.
         </h2>
         <p>
-          Apaixonado e atento aos detalhes, com uma forte motivação para
+          Tenho 1 ano de experiência com desenvolvimento e tenho proficiência em
+          Front end e Back end. Já trabalhei como freelancer em um projeto de
+          refatoração de código onde aprendi muito sobre estrutura de código,
+          código limpo, manutenção de código e padrões de código.
+        </p>
+        <p>
+          Além disso, já trabalhei como barbeiro no passado e tive a
+          oportunidade de prestar serviços públicos, ministrando cursos de
+          barbearia para jovens na Comunidade de Atendimento Socioeducativo São
+          Francisco de Assis (Case 1) em Aracaju, Sergipe.
+        </p>
+        <p>
+          Sou apaixonado e atento aos detalhes, com uma forte motivação para
           construir aplicações web eficientes, funcionais e visualmante
           atraentes. Acredito que experiências excepcionais para o usuário são
           criadas combinando tecnologias de ponta com design intuitivo.
         </p>
-        <p>
+        <!-- <p>
           Minha jornada como desenvolvedor tem sido impulsionada por uma
           curiosidade insaciável e uma busca constante por melhorias. Sou
           fascinado pelo cenário em constante evolução do desenvolvimento web e
@@ -32,7 +44,7 @@ import Topbar from "../components/Topbar.vue";
           para garantir a implementação bem-sucedida dos projetos. Valorizo a
           comunicação clara, a atenção aos detalhes e um foco forte em cumprir
           os prazos do projeto.
-        </p>
+        </p> -->
       </div>
     </section>
 
@@ -40,21 +52,23 @@ import Topbar from "../components/Topbar.vue";
       <div class="skillset__left">
         <h1>Tecnologias</h1>
         <ul>
-          <li>HTML / CSS</li>
-          <li>Javascript</li>
           <li>Vue.js</li>
-          <li>SASS</li>
+          <li>PHP</li>
+          <li>Typescript</li>
           <li>Python</li>
+          <li>Git</li>
+          <li>Docker</li>
         </ul>
       </div>
       <div class="skillset__right">
         <h1>Soft skills</h1>
         <ul>
-          <li>Inteligência emocional</li>
-          <li>Comunicação</li>
-          <li>Colaboração</li>
-          <li>Pensamento crítico</li>
-          <li>Motivação</li>
+          <li>Comunicativo</li>
+          <li>Experiência em falar em público</li>
+          <li>Disciplina (forte)</li>
+          <li>Aprendizagem rápida</li>
+          <li>Autodidata</li>
+          <li>Organização</li>
         </ul>
       </div>
     </section>

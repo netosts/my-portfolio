@@ -97,8 +97,8 @@ const isActive = (route) => {
         </div>
         <div class="header__external">
           <a
-            href="/CV - 12.10.2023.pdf"
-            download="CV - Silvio dos Santos Neto 12-10-2023"
+            href="/curriculo.pdf"
+            download="CURRICULUM_VITAE_NETO_SANTOS"
             id="cv-icon"
             class="external__links"
           >

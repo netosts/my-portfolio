@@ -9,7 +9,7 @@ import Topbar from "../components/Topbar.vue";
     <section class="introduction">
       <div class="introduction__text">
         <h1>Portfolio</h1>
-        <h2>Dê uma olhada em algumas de minhas aplicações web.</h2>
+        <h2>Dê uma olhada em alguns de meus projetos.</h2>
         <p>
           Esses projetos representam minha experiência como desenvolvedor. Cada
           um deles foi um desafio único que abracei com entusiasmo.
