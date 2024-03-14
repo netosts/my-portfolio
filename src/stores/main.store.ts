@@ -6,13 +6,15 @@ export const useMainStore = defineStore({
   state: () => ({
     projectItems: [
       {
-        href: "https://hml.conforfiton.com.br/login/demo",
-        src: "/images/conforfit-on.png",
-        imgAlt: "conforfit-on.png",
-        name: "Conforfit On",
-        info: "Web application",
+        href: "https://github.com/netosts/vue-cart",
+        src: "/images/vue-cart.png",
+        imgAlt: "vue-cart.png",
+        name: "Vue Cart",
+        info: "Carrinho de compras",
         image: {
-          backgroundColor: "#e4e4ef",
+          backgroundColor: "#fffaf5",
+          imageHeight: "90%",
+          imageWidth: "60%",
         },
       },
       {
@@ -20,9 +22,19 @@ export const useMainStore = defineStore({
         src: "/images/mini-financeiro.png",
         imgAlt: "mini-financeiro.png",
         name: "Mini Financeiro",
-        info: "PWA",
+        info: "Gerenciamento financeiro",
         image: {
           backgroundColor: "#e4edef",
+        },
+      },
+      {
+        href: "https://github.com/netosts/conforfiton-old",
+        src: "/images/conforfit-on.png",
+        imgAlt: "conforfit-on.png",
+        name: "Conforfit On",
+        info: "Web application",
+        image: {
+          backgroundColor: "#e4e4ef",
         },
       },
       {
