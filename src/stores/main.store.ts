@@ -7,7 +7,7 @@ export const useMainStore = defineStore({
     projectItems: [
       {
         href: "https://github.com/netosts/vue-cart",
-        src: "/images/vue-cart.png",
+        src: "./images/vue-cart.png",
         imgAlt: "vue-cart.png",
         name: "Vue Cart",
         info: "Carrinho de compras",
