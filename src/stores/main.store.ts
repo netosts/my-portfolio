@@ -38,7 +38,7 @@ export const useMainStore = defineStore({
         },
       },
       {
-        href: "https://netosts.github.io/seupomodoro",
+        href: "https://netosts.github.io/seu-pomodoro",
         src: "./images/seu-pomodoro.png",
         imgAlt: "seu-pomodoro.png",
         name: "Seu Pomodoro",
