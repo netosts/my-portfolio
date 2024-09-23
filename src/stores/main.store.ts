@@ -19,7 +19,7 @@ export const useMainStore = defineStore({
       },
       {
         href: "https://github.com/netosts/desafio-mini-financeiro",
-        src: "/images/mini-financeiro.png",
+        src: "./images/mini-financeiro.png",
         imgAlt: "mini-financeiro.png",
         name: "Mini Financeiro",
         info: "Gerenciamento financeiro",
@@ -29,7 +29,7 @@ export const useMainStore = defineStore({
       },
       {
         href: "https://github.com/netosts/conforfiton-old",
-        src: "/images/conforfit-on.png",
+        src: "./images/conforfit-on.png",
         imgAlt: "conforfit-on.png",
         name: "Conforfit On",
         info: "Web application",
@@ -38,8 +38,8 @@ export const useMainStore = defineStore({
         },
       },
       {
-        href: "http://seupomodoro.netosts.com",
-        src: "/images/seu-pomodoro.png",
+        href: "https://netosts.github.io/seupomodoro",
+        src: "./images/seu-pomodoro.png",
         imgAlt: "seu-pomodoro.png",
         name: "Seu Pomodoro",
         info: "Web application",
